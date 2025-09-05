@@ -7,10 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://swapi.dev',
+        target: 'https://api.imgflip.com',
         changeOrigin: true,
         secure: false, // Ignore SSL certificate errors for development
-        rewrite: (path) => path.replace(/^\/api/, '/api')
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }
