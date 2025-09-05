@@ -17,7 +17,7 @@ export default function Content() {
     const [character, setCharacter] = useState(null)
 
     useEffect(() => {
-        fetch("https://cors-anywhere.herokuapp.com/https://swapi.dev/api/people/1")
+        fetch("/api/people/1")
         .then(result => result.json())
         .then(data => setCharacter(data))
 
@@ -26,7 +26,7 @@ export default function Content() {
 
     return (
         <main>
-            { character && <h1>{ character }</h1> }
+            { character && <h1>{ character.name }</h1> }
             <div className="form">
                 <label>Top Text
                     <input
